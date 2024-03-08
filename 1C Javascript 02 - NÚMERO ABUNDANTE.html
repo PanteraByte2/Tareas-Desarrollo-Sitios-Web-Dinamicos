@@ -1,0 +1,43 @@
+</head>
+<body>
+    
+    <script>
+
+    function esAbundante(n) {
+        let suma = 0;
+        let flag=false;
+
+    for (let i = 1; i < n; i++) {
+
+        if (n % i == 0) {
+            suma = suma + i;
+            }
+    }
+        if (suma > n) {
+            flag=true; 
+        }
+
+    return flag;
+    }
+
+    function contarAbundantes(desde, hasta) {
+    let contador = 0;
+    for (let i = desde; i <= hasta; i++) {
+        if (esAbundante(i)) {
+            document.write(i + '<br>');
+        }
+    }
+    }
+
+    let desde , hasta;
+    
+    desde = parseInt(prompt("Ingrese el número desde el cual desea comenzar a contar los números abundantes:"));
+    
+    hasta = parseInt(prompt("Ingrese el número hasta el cual desea contar los números abundantes:"));
+    
+    contarAbundantes(desde, hasta);
+    
+    </script>
+
+</body>
+</html>
