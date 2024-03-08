@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+    function EsGrito(f){ 
+        let i , Letras=0, Signos=0, flag='escrito';
+
+        for(i=0; i<f.length;i++){
+            if(f.charAt(i)=='!'){
+                Signos++;
+            }
+
+            else if (!isNaN(parseInt(f.charAt(i)) ) ){
+                Letras=Letras;
+            }
+
+            else{
+                Letras++;
+            }
+        }
+        
+        if(Signos>Letras){
+           
+            flag='ESGRITO';
+            
+        }
+        return flag;
+    }
+
+    let frase;
+
+    frase=prompt('Ingrese frase');
+
+    document.write(EsGrito(frase));
+
+    </script>
+
+</body>
+</html>
