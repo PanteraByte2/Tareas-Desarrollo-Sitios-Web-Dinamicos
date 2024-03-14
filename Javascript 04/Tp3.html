@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Ejemplo de JavaScript</title>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+
+    <script>
+
+    function CantidadAñosNacimiento() {
+    let FechaActual = new Date();
+    let AñoNacimiento  = new Date(2006, 5, 26)
+
+    let AñoEnMilisegundos = 1000 * 60 * 60 * 24 * 30 * 12;
+    let diferenciaAños = (FechaActual - AñoNacimiento) / AñoEnMilisegundos;
+
+    return diferenciaAños;
+
+    }
+
+
+    function CantidadMesesCampeon() {
+    let FechaActual = new Date();
+    let AñoCampeon  = new Date(2022, 11, 18)
+
+    let MesesEnMilisegundos = 1000 * 60 * 60 * 24 * 30;
+    let diferenciaMeses = (FechaActual - AñoCampeon) / MesesEnMilisegundos;
+
+    return diferenciaMeses;
+
+    }
+
+    function CantidaddiasAnioNuevo() {
+    let FechaActual = new Date();
+
+    let AnioNuevo = FechaActual.getFullYear() + 1;
+    let PrimeroEnero = new Date(AnioNuevo, 0, 1)
+
+    let unDiaEnMilisegundos = 1000 * 60 * 60 * 24;
+    let diferenciaDias = (PrimeroEnero - FechaActual) / unDiaEnMilisegundos;
+
+    return diferenciaDias;
+
+    }
+
+    document.write("Faltan " + CantidaddiasAnioNuevo() + " días hasta el 1 de enero del próximo año." + "<br>");
+    document.write("Pasaron " + CantidadMesesCampeon() + " meses desde que Argentina salio campeon." + "<br>");
+    document.write("Pasaron " + CantidadAñosNacimiento() + " años desde mi nacimiento." );
+    </script>
+
+  
+
+</body>
+
+</html>
