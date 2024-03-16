@@ -1,0 +1,195 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <script>
+
+            //PASADO
+
+            function ConjugarPasadoYo(verbo){
+                let palabra;
+                verbo=verbo.replace('ar P', 'e');
+                verbo=verbo.replace('er P', 'i');
+                verbo=verbo.replace('ir P', 'i');
+                palabra='Yo '.concat(verbo);
+                return palabra;
+            }
+
+            function ConjugarPasadoTu(verbo){
+                let palabra;
+                verbo=verbo.replace('ar P', 'aste');
+                verbo=verbo.replace('er P', 'iste');
+                verbo=verbo.replace('ir P', 'iste');
+                palabra='Tu '.concat(verbo);
+                return palabra;
+            }
+            function ConjugarPasadoEl(verbo){
+                let palabra;
+                verbo=verbo.replace('ar P', 'o');
+                verbo=verbo.replace('er P', 'io');
+                verbo=verbo.replace('ir P', 'io');
+                palabra='El '.concat(verbo);
+                return palabra;
+            }
+            function ConjugarPasadoNosotros(verbo){
+                let palabra;
+                verbo=verbo.replace('ar P', 'amos');
+                verbo=verbo.replace('er P', 'imos');
+                verbo=verbo.replace('ir P', 'imos');
+                palabra='Nosotros '.concat(verbo);
+                return palabra;
+            }
+            function ConjugarPasadoVosotros(verbo){
+                let palabra;
+                verbo=verbo.replace('ar P', 'asteis');
+                verbo=verbo.replace('er P', 'isteis');
+                verbo=verbo.replace('ir P', 'isteis');
+                palabra='Vosotros '.concat(verbo);
+                return palabra;
+            }
+            function ConjugarPasadoEllxs(verbo){
+                let palabra;
+                verbo=verbo.replace('ar P', 'arxn');
+                verbo=verbo.replace('er P', 'ierxn');
+                verbo=verbo.replace('ir P', 'ierxn');
+                palabra='Ellxs '.concat(verbo);
+                return palabra;
+            }
+
+            //PRESENTE
+
+            function ConjugarPresenteYo(verbo){
+                let palabra;
+                verbo=verbo.replace('ar A', 'o');
+                verbo=verbo.replace('er A', 'o');
+                verbo=verbo.replace('ir A', 'o');
+                palabra='Yo '.concat(verbo);
+                return palabra;
+            }
+
+            function ConjugarPresenteTu(verbo){
+                let palabra;
+                verbo=verbo.replace('ar A', 'as');
+                verbo=verbo.replace('er A', 'es');
+                verbo=verbo.replace('ir A', 'es');
+                palabra='Tu '.concat(verbo);
+                return palabra;
+            }
+            function ConjugarPresenteEl(verbo){
+                let palabra;
+                verbo=verbo.replace('ar A', 'a');
+                verbo=verbo.replace('er A', 'e');
+                verbo=verbo.replace('ir A', 'e');    
+                palabra='El '.concat(verbo);
+                return palabra;
+            }
+            function ConjugarPresenteNosotros(verbo){
+                let palabra;
+                verbo=verbo.replace('ar A', 'amos');
+                verbo=verbo.replace('er A', 'emos');
+                verbo=verbo.replace('ir A', 'imos');
+                palabra='Nosotros '.concat(verbo);
+                return palabra;
+            }
+            function ConjugarPresenteVosotros(verbo){
+                let palabra;
+                verbo=verbo.replace('ar A', 'ais');
+                verbo=verbo.replace('er A', 'eis');
+                verbo=verbo.replace('ir A', 'is');
+                palabra='Vosotros '.concat(verbo);
+                return palabra;
+            }
+            function ConjugarPresenteEllxs(verbo){
+                let palabra;
+                verbo=verbo.replace('ar A', 'xn');
+                verbo=verbo.replace('er A', 'xn');
+                verbo=verbo.replace('ir A', 'xn');
+                palabra='Ellxs '.concat(verbo);
+                return palabra;
+            }
+
+            //FUTURO
+
+            function ConjugarFuturoYo(verbo){
+                let palabra;
+                verbo=verbo.replace('ar F', 'are');
+                verbo=verbo.replace('er F', 'ere');
+                verbo=verbo.replace('ir F', 'ire');
+                palabra='Yo '.concat(verbo);
+                return palabra;
+            }
+            function ConjugarFuturoTu(verbo){
+                let palabra;
+                verbo=verbo.replace('ar F', 'aras');
+                verbo=verbo.replace('er F', 'eras');
+                verbo=verbo.replace('ir F', 'iras');
+                palabra='Tu '.concat(verbo);
+                return palabra;
+            }
+            function ConjugarFuturoEl(verbo){
+                let palabra;
+                verbo=verbo.replace('ar F', 'ara');
+                verbo=verbo.replace('er F', 'era');
+                verbo=verbo.replace('ir F', 'ira');
+                palabra='El '.concat(verbo);
+                return palabra;
+            }
+            function ConjugarFuturoNosotros(p){
+                let palabra;
+                p=p.replace(' F', '');
+                palabra='Nosotros '.concat(p+'emos');
+                return palabra;
+            }
+            function ConjugarFuturoVosotros(verbo){
+                let palabra;
+                verbo=verbo.replace(' F', '');
+                palabra='Vosotros '.concat(verbo+'eis');
+                return palabra;
+            }
+            function ConjugarFuturoEllxs(verbo){
+                let palabra;
+                verbo=verbo.replace('ar F', 'arxn');
+                verbo=verbo.replace('er F', 'erxn');
+                verbo=verbo.replace('ir F', 'irxn');
+                palabra='Ellxs '.concat(verbo);
+                return palabra;
+            }
+
+            let posicion=0;
+            let palabra;
+            let letra;
+            palabra=prompt("Ingresa una palabra " + " ");
+            posicion=palabra.length-1;
+            letra=palabra.slice(posicion);
+            switch(letra){
+                case 'P':{
+                    document.write( ConjugarPasadoYo(palabra) + '<br>' + 
+                                    ConjugarPasadoTu(palabra) + '<br>' + 
+                                    ConjugarPasadoEl(palabra) + '<br>' + 
+                                    ConjugarPasadoNosotros(palabra) + '<br>' + 
+                                    ConjugarPasadoVosotros(palabra) + '<br>' + 
+                                    ConjugarPasadoEllxs(palabra) + '<br>' );
+                    break;
+                }
+                case 'A':{
+                    document.write( ConjugarPresenteYo(palabra) + '<br>' + 
+                                    ConjugarPresenteTu(palabra) + '<br>' + 
+                                    ConjugarPresenteEl(palabra) + '<br>' +
+                                    ConjugarPresenteNosotros(palabra) + '<br>' + 
+                                    ConjugarPresenteVosotros(palabra) + '<br>' + 
+                                    ConjugarPresenteEllxs(palabra) + '<br>' );
+                    break;
+                }
+                case 'F':{
+                    document.write( ConjugarFuturoYo(palabra) + '<br>' + 
+                                    ConjugarFuturoTu(palabra) + '<br>' + 
+                                    ConjugarFuturoEl(palabra) + '<br>' + 
+                                    ConjugarFuturoNosotros(palabra) + '<br>' + 
+                                    ConjugarFuturoVosotros(palabra) + '<br>' + 
+                                    ConjugarFuturoEllxs(palabra) + '<br>' );
+                    break;
+                }
+            }
+        </script>
+    </body>
+</html> 
