@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        function VectorF(n){
+    
+            let A = new Array(n);
+
+            for(let i=1; i<=n; i++){
+                A.push(Math.floor(Math.random() * 32000));
+                
+            }
+
+            return A;
+        }
+
+        function SumarVector(a,na){
+            let Suma=0;
+            
+            for(let i=1; i<=na; i++){
+                Suma = Suma + a[i];
+            }
+        
+        return Suma;
+        }
+
+        function PromedioVector(uma,na){
+            J = uma/na;
+            return J;
+        }
+
+        function VectorB(a,na,j){
+            let B = new Array();
+            for(let i=1; i<=na; i++){
+                if(a[i]>j){
+                    B.push(a[i]);
+                }
+            }
+            return B;
+        }
+
+        function MultiplosDeA(a){
+            let Contador=0;
+
+            for(let i=1; i<=a.length;i++){
+                if(a[i]%2===0 && a[i]%3===0){
+                    Contador++;
+                }
+            }
+        return Contador;
+        }
+
+        function ArregloAConElementosMultiplicados(a){
+            let C = new Array();
+            for(let i=1; i<=a.length-1;i++){
+                C[i] = a[i] * 2;
+            }
+        return C;    
+        }
+
+        function MostrarVectores(X){
+
+            for(let i=1; i<=X.length-1;i++){
+                document.write('Elemento '+ i + ' del arreglo: '+ X[i]+ '<br>');
+            }
+
+        }
+        
+        function TodosLosResultados(suma,prom,multi){
+
+            document.write('La suma de los elementos del Vector A es: ' + suma + '<br>');
+            document.write('El promedio de los elementos del Vector A es: ' + prom + '<br>');
+            document.write('La cantidad de numeros multiplos de 2 y 3 del Vector A son: ' + multi + '<br>');
+        }
+        
+     
+        let Max,VA,Suma,Prom,Multi,VB,VC;
+
+        Max=prompt('Ingrese numero maximo');
+
+        VA=VectorF(Max);
+
+        Suma=SumarVector(VA,Max);
+
+        Prom=PromedioVector(Suma,Max);
+        
+        VB=VectorB(VA,Max,Prom);
+
+        Multi=MultiplosDeA(VA)
+
+        VC=ArregloAConElementosMultiplicados(VA);
+        
+        TodosLosResultados(Suma,Prom,Multi);
+        
+       MostrarVectores(VA);
+       MostrarVectores(VB);
+       MostrarVectores(VC);
+    </script>
+</body>
+</html>
