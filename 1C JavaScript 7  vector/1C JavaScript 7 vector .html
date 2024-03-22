@@ -1,0 +1,79 @@
+<!--- Nuestra Presidenta tiene algunos números secretos, por lo que, en caso de 
+emergencia, puede usarlo para ponerse en contacto con la SIDE(Servicio
+Inteligencia Del Estado) y salvarla. Pero estos números tienen algunas
+características especiales, son primos y la suma de los dígitos
+individuales son también primos. Como 23, es el número primo y la suma de
+sus dígitos (2 + 3) = 5, también es un número primo.
+
+Así que su tarea es imprimir todos los números en un rango dado, a, b
+(ambos incluidos), en orden ascendente.
+Utilizando función bool EsPrimo(int n) --->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<script>
+
+    function Vector(a){
+        let A = [];
+
+        for(let i=0; i<a; i++){
+            A.push(Math.floor(Math.random() * 10));
+        }
+
+        return A;
+
+    }
+
+    function OrdenarVector(VA){
+        VA.sort();
+        document.write(VA);
+    }
+
+    function CalcularModa(VA,a){
+        let Conteo=[];
+        for(let j=0; j<a; j++){
+            let numero = VA[j];
+            let contador=0;
+            for(let i=0; i<VA.length; i++){
+                if(numero==VA[i]){
+                    contador++;
+                }
+            }
+            Conteo.push({ numero: numero, contador: contador });
+        }
+
+        let maxConteo = 0;
+        let Moda;
+        for (let i = 0; i < Conteo.length; i++) {
+            if (Conteo[i].contador > maxConteo) {
+                Moda = Conteo[i].numero;
+                maxConteo = Conteo[i].contador;
+            }
+        }
+        document.write('La moda del vector es: ' + Moda);
+    }
+
+
+    let N1,Va;
+
+    N1=prompt('Ingrese cuantos numeros quiere que se guardden en el array');
+    Va=Vector(N1);
+    OrdenarVector(Va);
+    CalcularModa(Va,N1);
+
+
+</script>
+
+
+</body>
+
+</html
