@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JAVASCRIPT 06</title>
+<script>
+
+function EsPrimo(n) {
+    if (n <= 1) return false;
+    for (let i = 2; i < n; i++) {
+        if (n % i === 0) return false;
+    }
+    return true;
+}
+
+function SumaDigitos(n) {
+    let numeroComoTexto = n.toString();
+    let suma = 0;
+    for (let i = 0; i < numeroComoTexto.length; i++) {
+        suma += parseInt(numeroComoTexto[i]);
+    }
+    return suma;
+}
+
+function EncontrarNumeros() {
+    let input = prompt("Ingrese dos números:");
+    let numeros = input.split(" ");
+
+    let a = parseInt(numeros[0]);
+    let b = parseInt(numeros[1]);
+    
+    let resultado = [];
+
+    for (let i = a; i <= b; i++) {
+        if (EsPrimo(i) && EsPrimo(SumaDigitos(i))) {
+            resultado.push(i);
+        }
+    }
+
+    document.write("Resultado: " + resultado + '<br>');
+}
+EncontrarNumeros();
+</script>
+</head>
+</html>
