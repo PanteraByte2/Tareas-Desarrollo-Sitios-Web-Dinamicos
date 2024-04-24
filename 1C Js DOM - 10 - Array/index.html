@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <script>
+
+        function getSeniales(n){ 
+            let Senial = n;
+            return Senial;
+        }
+
+        function cuadrentesSeniales(Seni){
+
+            let cuadrantesAsosiados = new Array();
+
+            for (let i = 0; i < Seni.length; i++) {
+                let angulo = ((Seni[i] % 360) + 360) % 360;
+
+                if (angulo >= 45 && angulo < 135) {
+                cuadrantesAsosiados.push('N'); 
+                }
+                if (angulo >= 135 && angulo < 225) {
+                cuadrantesAsosiados.push('O'); 
+                }
+                if (angulo >= 225 && angulo < 315) {
+                cuadrantesAsosiados.push('S'); 
+                }
+                if (angulo >= 315 || angulo < 45) {
+                cuadrantesAsosiados.push('E'); 
+                }
+            }
+            
+            return cuadrantesAsosiados.join('');
+        }
+
+        function arrayAgrupador(array, size) {
+            let arrayAgrupado = [];
+            for (let i = 0; i < array.length - size + 1; i++) {
+                let grupo = "";
+                for (let j = 0; j < size; j++) {
+                    grupo += array[i + j];
+                }
+            arrayAgrupado.push(grupo);
+            }
+            
+            return arrayAgrupado;
+        }
+
+        function contarElementosComunes(arr1, arr2) {
+            let count = 0;
+            for (let element of arr1) {
+                if (arr2.includes(element)) {
+                    count++;
+                }
+            }
+            
+            return count;
+        }
+
+        function calcularPorcentajes(secuenciaCuadrantes) {
+            let totalSeniales = secuenciaCuadrantes.length;
+            let ocurrencias = {
+            N: 0,
+            E: 0,
+            S: 0,
+            O: 0
+            };
+
+            for (let i = 0; i < secuenciaCuadrantes.length; i++) {
+                ocurrencias[secuenciaCuadrantes[i]]++;
+            }
+
+            let porcentajes = {};
+            for (let cuadrante in ocurrencias) {
+                porcentajes[cuadrante] = ((ocurrencias[cuadrante] / totalSeniales) * 100).toFixed(2);
+            }
+
+            return porcentajes;
+        }
+    
+
+        //Main
+        let seniales = [100,200,50,330,250,180,215,200,150,90,165,240,20,340];
+        let Combinaciones = ['NESO', 'NOSE', 'OSEN', 'ONES', 'SONE', 'SENO', 'ENOS', 'ESON'];
+        let A = getSeniales(seniales);
+        let B = cuadrentesSeniales(A);
+        document.write(B + '<br>');
+        let Agrupados = arrayAgrupador(B, 4);
+
+        let elementosComunesContados = contarElementosComunes(Agrupados, Combinaciones);
+        document.write('Número de ciclos completos: ' + elementosComunesContados + '<br>');
+
+        let porcentajes = calcularPorcentajes(B);
+        document.write('Porcentajes de ocurrencia de cada cuadrante:<br>');
+        for (let cuadrante in porcentajes) {
+            document.write(cuadrante + ': ' + porcentajes[cuadrante] + '%<br>');
+        }
+
+    </script>
+</body>
+</html>
