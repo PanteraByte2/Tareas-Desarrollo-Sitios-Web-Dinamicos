@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        function laSecuencia(semilla){
+            let secuencia = new Array(semilla);
+
+            while(semilla != 1){
+                if(semilla % 2 == 0){
+                    semilla = semilla/2;
+                }
+                else{
+                    semilla = semilla * 3 + 1;
+                }
+                secuencia.push(semilla);
+            }
+            
+            return secuencia;
+        }
+
+        function Largo(secuencia){
+            return secuencia.length;
+        }
+
+        function numeroMaximo(secuencia) {
+        return Math.max(...secuencia);
+        }
+
+        //MAIN
+
+        let Raiz = prompt('Ingresa Raiz');
+        let Secuencia2 = laSecuencia(Raiz);
+        let Larga = Largo(Secuencia2);
+        document.write('La secuencia: ' + Secuencia2 + '<br>');
+        document.write('El largo es : '+ Larga + '<br>');
+        document.write('El numero maximo es : '+ numeroMaximo(Secuencia2) + '<br>');
+    </script>
+</body>
+</html>
