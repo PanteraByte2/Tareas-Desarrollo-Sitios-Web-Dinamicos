@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta chnumerosset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <input type="file" id="archivo">
+
+    <script>
+        function filtraNum(numeros, resultado){
+            let contador = 0;
+            
+            for (let i = 0; i < numeros.length; i++) {
+                        let numero = numeros[i];
+                        if (numero.charAt(0) === numero.charAt(numero.length - 1)) {
+                            contador++;
+                            let num = parseInt(numero);
+                            resultado.push(numero);
+                        }
+                    }
+                    document.write('Cantidad de números que comienzan y terminan con el mismo dígito:', contador  + '<br>');
+                    document.write(resultado);
+        }
+        function SubT7(numeros, resultado){
+            if(numeros.length == 1){
+                   document.write("Error"); 
+            }
+            else{
+                    filtraNum(numeros, resultado);
+            }
+        }
+        function SubT6(numeros, resultado){
+            let bandera = false;
+            for(let i = 0; i <= numeros.length; i++){
+                if(numeros[i] >= 100){
+                    bandera = true;
+                }
+            }
+            if(bandera == true){
+                SubT7(numeros, resultado);
+            }
+            else{
+                Esrror();
+            }
+        }
+        function SubT5(numeros, resultado){
+            if(numeros.length == 1 && numeros[0] <= 100){
+                   document.write("Error"); 
+            }
+            else{
+                    SubT6(numeros, resultado);
+            }
+        }
+
+        function SubT4(numeros, resultado){
+            let bandera = false;
+            for(let i = 0; i <= numeros.length; i++){
+                if(numeros[i] >= 20){
+                    bandera = true;
+                }
+            }
+            if(bandera == true){
+                SubT5(numeros, resultado);
+            }
+            else{
+                Esrror();
+            }
+        }
+        function SubT3(numeros, resultado){
+
+            if(numeros.length == 1 && numeros[0] <= 20){
+                   document.write("Error"); 
+            }
+            else{
+                    SubT4(numeros, resultado);
+            }
+        }
+
+        function SubT2(numeros, resultado){
+            let bandera = false;
+            for(let i = 0; i <= numeros.length; i++){
+                if(numeros[i] >= 10){
+                    bandera = true;
+                }
+            }
+            if(bandera == true){
+                SubT3(numeros, resultado);
+            }
+            else{
+                Esrror();
+            }
+        }
+
+        function SubT1(numeros, resultado){
+            if(numeros.length == 1 && numeros[0] <= 10){
+                   document.write("Error"); 
+            }
+            else{
+                    SubT2(numeros, resultado);
+            }
+        }
+
+        function Esrror(){
+            document.write("Errors");
+        }
+
+
+
+
+
+
+    let Selectornumeroschivo = document.getElementById('archivo');
+
+    Selectornumeroschivo.addEventListener('change', (event) => {
+            let file = event.target.files[0];
+            let lector = new FileReader();
+            
+            lector.onload = function() {
+
+
+                let contenido = lector.result;
+                let numeros = contenido.split(' ');
+                let resultado = new Array();
+
+                SubT1(numeros, resultado);
+
+               
+            
+            };
+
+            lector.readAsText(file);
+
+    });
+    /*
+    
+                    document.write('El numerosreglo excede el tamaño permitido (10)');
+    */
+    </script>
+</body>
+</html>
